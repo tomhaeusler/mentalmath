@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/layout.astro';
+---
+
+<Layout>
+  <slot name="title">Exercise Session</slot>
+  <slot name="header">Mental Calculation Exercises</slot>
+
+  <!-- Ensure the sessionControls container is correctly defined -->
+  <div id="sessionControls">
+    <button id="startSession" class="bg-blue-500 text-white px-4 py-2">Start Session</button>
+    <!-- Difficulty Selection -->
+    <div>
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty" class="px-2 py-1">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <!-- Include checkboxes for selecting exercise types -->
+    <div id="exerciseOptions">
+      <label><input type="checkbox" name="operation" value="add" checked>Addition (+)</label>
+      <label><input type="checkbox" name="operation" value="subtract" checked>Subtraction (-)</label>
+      <label><input type="checkbox" name="operation" value="multiply" checked>Multiplication (*)</label>
+      <label><input type="checkbox" name="operation" value="divide" checked>Division (/)</label>
+      <label><input type="checkbox" name="operation" value="root" checked>Square Root (√)</label>
+    </div>
+  </div>
+  <div id="exerciseOutput" class="mt-8">
+    <!-- Exercises and countdown will be displayed here -->
+  </div>
+
+  <script type="module" src="/scripts/sessionManager.js"></script>
+</Layout>
